@@ -1,13 +1,16 @@
 from behave import *
 
-@given('we have behave installed')
+
+@given('greeter exists')
 def step_impl(context):
     pass
 
-@when('we implement a test')
+
+@when('greeter receives greet() message')
 def step_impl(context):
     assert True is not False
 
-@then('behave will test it for us!')
+
+@then('greeter says Hello')
 def step_impl(context):
-    assert context.failed is False
+    print("Hello!")
