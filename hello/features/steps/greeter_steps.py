@@ -14,7 +14,7 @@ def step_impl(context):
     context.message = context.greeter.greeter_speaks()
 
 
-@then('I should see Hello Behave')
-def step_impl(context):
+@then('I should see "{message}"')
+def step_impl(context, message):
     context.message  = context.greeter.greeter_speaks()
-    expect(context.message).to(equal("Hello Behave!"))
+    expect(context.message).to(equal(message))
