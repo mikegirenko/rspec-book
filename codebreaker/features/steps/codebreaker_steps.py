@@ -1,0 +1,13 @@
+from behave import *
+from codebreaker.codebreaker.game import Game
+
+@given('I am not yet playing')
+def step_impl(context):
+    pass
+
+@when('I start a new game')
+def step_impl(context):
+    context.game = Game().start()
+
+
+

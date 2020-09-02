@@ -5,6 +5,7 @@ from hello.features.steps.greeter_object import Greeter
 
 
 class GreeterUnitTest(TestCase):
+
     def test_greeter_speaks(self):
         greeter = Greeter()
         message  = greeter.greeter_speaks()
