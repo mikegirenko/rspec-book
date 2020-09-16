@@ -1,4 +1,4 @@
 class Game:
 
     def start(self):
-        return "Game started"
+        print("Game started")

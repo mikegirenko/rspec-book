@@ -5,8 +5,12 @@ from codebreaker.codebreaker import Output
 
 class OutputUnitTests(TestCase):
 
-    def test_output(self):
+    def test_messages(self):
 
-        output = Output().message()
+        output = Output().messages()
 
         expect(output).to(equal("Welcome to Codebreaker!"))
+
+
+if __name__ == "__main__":
+    main()

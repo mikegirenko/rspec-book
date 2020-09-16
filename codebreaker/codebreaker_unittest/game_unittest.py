@@ -1,14 +1,14 @@
 from unittest import TestCase,  main
-from expects import equal, expect
+from expects import equal, expect, contain
 
 from codebreaker.codebreaker import Game
 
 class GameUnitTest(TestCase):
 
-    def test_game(self):
+    def test_start(self):
         game = Game().start()
 
-        expect(game).to(equal("Game started"))
+        expect(game).to(contain("Game started"))
 
 
 if __name__ == "__main__":

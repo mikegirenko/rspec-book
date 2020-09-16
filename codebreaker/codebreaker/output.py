@@ -1,6 +1,14 @@
 class Output:
 
-    def message(self):
+    def __init__(self):
+        self._messages = []
+        self._output = []
 
-        message = "Welcome to Codebreaker!"
-        return message
+    def messages(self):
+        return self._messages
+
+    def puts(self, message):
+        self._messages.append(message)
+
+    def output(self, output):
+        self._output.append(output)
