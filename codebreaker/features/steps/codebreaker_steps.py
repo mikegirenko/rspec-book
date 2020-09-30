@@ -10,7 +10,7 @@ def step_impl(context):
 @when('I start a new game')
 def step_impl(context):
     context.game = Game().start()
-    context.output = Output().output()
+    context.output = Output().messages()
 
 
 @then('I should see {message}')
