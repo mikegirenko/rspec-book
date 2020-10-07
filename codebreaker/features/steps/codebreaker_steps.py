@@ -1,4 +1,6 @@
 from behave import *
+from expects import expect, contain
+
 from codebreaker import Game, Output
 
 
@@ -9,13 +11,14 @@ def step_impl(context):
 
 @when('I start a new game')
 def step_impl(context):
-    context.game = Game().start()
-    context.output = Output().messages()
+    context.output = Output()
+    context.game = Game(context.output)
+    context.game.start()
 
 
 @then('I should see {message}')
 def step_impl(context, message):
-    context.message = Output.messages()
+    expect(context.output.output()).to(contain(message))
 
 
 
