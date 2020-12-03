@@ -6,8 +6,8 @@ from codebreaker.codebreaker import Output
 
 class OutputUnitTests(TestCase):
 
-    def it_is_passing(self):
-        pass
+    def test_is_it_passing(self):
+        assert True
 
 
 if __name__ == "__main__":

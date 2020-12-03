@@ -12,7 +12,15 @@ Feature: code-breaker submits guess
   I want to submit a guess
   So that I can try to break the code
 
-  Scenario: all exact matches
-    Given the secret code is "1234"
-    When I guess "1234"
-    Then the mark should be "++++"
+  Scenario Outline: submit guess
+    Given the secret code is "<code>"
+    When I guess "<guess>"
+    Then the mark should be "<mark>"
+
+    Scenarios: no matches
+      | code | guess | mark |
+      | 1234 | 5555  |      |
+
+     Scenarios: all numbers correct
+      | code | guess | mark |
+      | 1234 | 1234  | ++++ |
