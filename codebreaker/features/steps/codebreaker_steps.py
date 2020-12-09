@@ -6,9 +6,15 @@ from codebreaker import Game, Output
 
 @given('I am not yet playing')
 def step_impl(context):
-    game_obj = Game()
-    game_obj.start_game()
+    pass
 
 @when('I start a new game')
 def step_impl(context):
-    pass
+    context.output = Output()
+    context.game = Game(context.output)
+    context.game.start()
+
+@then('I should see "{message}"')
+def step_impl(context, message):
+    context.output = Output()
+    expect(context.output.output_message()).to(contain(message))

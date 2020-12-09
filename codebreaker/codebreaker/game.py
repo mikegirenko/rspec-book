@@ -1,4 +1,6 @@
 class Game:
+    def __init__(self, output):
+        self.output = output
 
-    def start_game(self):
+    def start(self):
         pass
