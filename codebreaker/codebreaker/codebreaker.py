@@ -2,19 +2,17 @@ class Game:
     def __init__(self, output):
         self.output = output
 
-    def start_game(self):
-        message = "Welcome to Codebreaker!"
-        self.message = message
-        print(self.message)
+    def start(self):
+        print("Welcome to Codebreaker!")
+        print("Enter guess:")
 
 
 class Output():
     def __init__(self):
-        self.messages = []
+        self._messages = []
 
     def write_message(self, message):
-        self.messages.append(message)
+        self._messages.append(message)
 
-    def display_message(self):
-        output_obj = Output()
-        print(output_obj.messages)
+    def display_messages(self):
+        return self._messages
