@@ -4,17 +4,17 @@ from expects import equal, expect, contain
 from codebreaker.codebreaker import Game, Output
 
 
-class GameUnitTest(TestCase):
+class TestGame(TestCase):
+    def setUp(self) -> None:
+        self.output_obj = Output()
+        self.game_obj = Game(self.output_obj)
 
-    def test_start_game_sends_welcome_message(self):
-        message = 'Welcome to Codebreaker!'
-        output_obj = Output()
-        game_obj = Game(output_obj.write_message(message))
-        game_obj.start()
-        expect(game_obj.output).to(contain(message))
+    def test_start_sends_welcome_message(self):
+        expected_message = 'Welcome to Codebreaker!'
+        self.game_obj.start_game("1234")
+        expect(self.output_obj.messages()).to(contain(expected_message))
 
-    # def test_start_game_prompts_for_first_guess(self):
-    #     message = 'Enter guess:'
-    #     game_obj = Game(message)
-    #     game_obj.start()
-    #     expect(game_obj.output).to(contain(message))
+    def test_start_prompts_for_first_guess(self):
+        expected_message = 'Enter guess:'
+        self.game_obj.start_game("4321")
+        expect(self.output_obj.messages()).to(contain(expected_message))

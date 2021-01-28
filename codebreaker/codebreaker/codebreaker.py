@@ -1,18 +1,24 @@
 class Game:
     def __init__(self, output):
-        self.output = output
+        self._output_file = output
+        self.secret = None
 
-    def start(self):
-        print("Welcome to Codebreaker!")
-        print("Enter guess:")
+    def start_game(self, secret):
+        self.secret = secret
+        self.print_message('Welcome to Codebreaker!')
+        self.print_message('Enter guess:')
+
+    def print_message(self, output):
+        print(output, file=self._output_file)
 
 
-class Output():
+class Output:
     def __init__(self):
-        self._messages = []
+        self._messages_collector = []
 
-    def write_message(self, message):
-        self._messages.append(message)
+    def messages(self):
+        return self._messages_collector
 
-    def display_messages(self):
-        return self._messages
+    def write(self, message):
+        if message != '\n':
+            self._messages_collector.append(message)
