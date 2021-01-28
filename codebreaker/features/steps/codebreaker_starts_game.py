@@ -1,7 +1,8 @@
 from behave import *
 from expects import expect, contain
 
-from codebreaker.codebreaker import Game, Output
+from codebreaker import Game
+from codebreaker import Output
 
 
 @given('I am not yet playing')

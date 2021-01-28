@@ -1,1 +1,2 @@
-from .codebreaker import Game, Output
+from .game import Game
+from .output import Output
