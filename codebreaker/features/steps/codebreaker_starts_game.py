@@ -19,4 +19,4 @@ def step_impl(context):
 
 @then('I should see "{message}"')
 def step_impl(context, message):
-    expect(context.output.messages()).to(contain(message))
+    expect(context.output.messages_collector()).to(contain(message))

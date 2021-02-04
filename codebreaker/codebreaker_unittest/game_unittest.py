@@ -13,9 +13,9 @@ class TestGame(TestCase):
     def test_start_sends_welcome_message(self):
         expected_message = 'Welcome to Codebreaker!'
         self.game_obj.start_game("1234")
-        expect(self.output_obj.messages()).to(contain(expected_message))
+        expect(self.output_obj.messages_collector()).to(contain(expected_message))
 
     def test_start_prompts_for_first_guess(self):
         expected_message = 'Enter guess:'
         self.game_obj.start_game("4321")
-        expect(self.output_obj.messages()).to(contain(expected_message))
+        expect(self.output_obj.messages_collector()).to(contain(expected_message))
