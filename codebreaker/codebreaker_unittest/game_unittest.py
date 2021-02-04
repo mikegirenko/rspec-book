@@ -1,5 +1,5 @@
 from unittest import TestCase
-from expects import equal, expect, contain
+from expects import expect, contain
 
 from codebreaker.codebreaker.game import Game
 from codebreaker.codebreaker.output import Output
