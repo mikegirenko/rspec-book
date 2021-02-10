@@ -19,4 +19,4 @@ def step_impl(context, guess):
 
 @then('the mark should be "{mark}"')
 def step_impl(context, mark):
-    expect(context.output.messages()).to(contain(mark))
+    expect(context.output.messages_collector()).to(contain(mark))

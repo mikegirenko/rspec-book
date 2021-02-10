@@ -10,3 +10,6 @@ class Game:
 
     def print_message(self, output):
         print(output, file=self.output_file)
+
+    def guess(self, guess):
+        pass
