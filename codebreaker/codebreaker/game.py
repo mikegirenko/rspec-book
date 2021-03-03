@@ -1,3 +1,6 @@
+from codebreaker.codebreaker.code_maker import CodeMaker
+
+
 class Game:
     def __init__(self, output):
         self.output_file = output
